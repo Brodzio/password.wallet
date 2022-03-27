@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Log in Succeeded</title>
+  <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container text-center">
+  <div>
+    <h1>You have log in successfully!</h1>
+    <h3><a th:href="@{/add}">Add password to wallet</a></h3>
+    <h3><a th:href="@{/getAllUserPasswords}">Get all user password</a></h3>
+    <h3><a th:href="@{/changePassword}">Change Password</a> <br/></h3>
+    <h3><a th:href="@{/logout}">Log out</a> <br/></h3>
+  </div>
+</div>
+</body>
+</html>

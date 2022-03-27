@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Sharing form</title>
+  <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container text-center">
+  <div>
+    <h1>Enter email to share</h1>
+  </div>
+  <div>
+    <form th:action="@{/sharingPassword}" th:object="${passwordToShare}" method="post">
+      <label>Email</label>
+      <input type="text" name="email" th:field="*{email}">
+      <input type="hidden" name="login" th:value="${passwordToShare.login}" th:field="*{login}">
+      <input type="hidden" name="password" th:value="${passwordToShare.password}" th:field="*{password}">
+      <input type="hidden" name="url" th:value="${passwordToShare.webAddress}" th:field="*{webAddress}"><br>
+      <button type="submit" class="btn btn-primary">Share</button>
+    </form>
+  </div>
+  <div>
+    <p>
+      <a th:href="@{/back}">Back</a>
+    </p>
+  </div>
+</div>
+</body>
+</html>

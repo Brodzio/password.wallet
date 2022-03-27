@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container-fluid text-center">
+  <div>
+    <table class="table table-striped table-primary">
+      <thead class="ttop">
+        <tr class="table-info">
+          <td><b>Ip address</b> </td>
+          <td><b></b> </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="ip, iStat : ${ipList}" th:style="${iStat.odd}? 'font-weight: normal;'">
+          <td th:text="${ip}"></td>
+          <td>
+            <form th:action="@{/ipList}" th:object="${ipToUnblock}" method="post">
+              <input type="hidden" name="ipAddress" th:value="${ip}">
+              <button type="submit" class="btn btn-primary">Unblock</button>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <p>
+        <a th:href="@{/back}">Back</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

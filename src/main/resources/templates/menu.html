@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu</title>
+  <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container text-center">
+  <div>
+    <h1>Menu</h1>
+    <h3><a th:href="@{/add}">Add password to wallet</a></h3>
+    <h3><a th:href="@{/getAllUserPasswords}">Get all user passwords</a></h3>
+    <h3><a th:href="@{/getAllSharedPasswords}">Get all shared passwords</a></h3>
+    <h3><a th:href="@{/changePassword}">Change Password</a> <br/></h3>
+    <h3><a th:href="@{/lastLogins}">Show data of last logins</a> <br/></h3>
+    <h3><a th:href="@{/ipList}">Show list of last ip logins</a> <br/></h3>
+    <h3><a th:href="@{/logout}">Log out</a> <br/></h3>
+  </div>
+</div>
+</body>
+</html>
